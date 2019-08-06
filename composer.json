@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">=7.0",
-        "scar/coroutine":"*"
+        "scar/coroutine":"*",
+        "robmorgan/phinx" :"0.10.6"
     },
     "autoload": {
         "psr-4": {

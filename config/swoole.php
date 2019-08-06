@@ -8,7 +8,7 @@
 
 $config = array();
 //--------------------------swoole------------------------//
-$config['http']['bind']['port'] = 8820;
+$config['http']['bind']['port'] = 8821;
 $config['http']['bind']['host'] = '0.0.0.0';
 $config['http']['bind']['mode'] = '';
 $config['http']['bind']['sock_type'] = '';
