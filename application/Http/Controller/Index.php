@@ -29,6 +29,7 @@ class Index
 	 * @apiDescription 接口描述
 	 *
 	 *
+	 *
 	 * @apiSuccess {Number} code    状态码，0：请求成功
 	 * @apiSuccess {String} message   提示信息
 	 * @apiSuccess {Object} data    返回数据
