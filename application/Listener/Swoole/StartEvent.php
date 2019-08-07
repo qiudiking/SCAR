@@ -7,6 +7,8 @@
  */
 namespace application\Listener\Swoole;
 
+use Swoole\Coroutine;
+
 /**
  *
  *

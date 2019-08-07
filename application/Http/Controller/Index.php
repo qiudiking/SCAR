@@ -1,12 +1,8 @@
 <?php
 namespace application\Http\Controller;
-use Scar\Cache;
-use Scar\Container;
-use Scar\Db;
+
 use Scar\http\Request;
 use Scar\http\Response;
-use Scar\Result;
-use Swoole\WebSocket\Server;
 
 /**
  * Created by PhpStorm.
@@ -45,9 +41,8 @@ class Index
 	 */
 	public function Index( Request $request, Response $response )
 	{
-		$data = Db::table('wx_user')->where('status',0)->find();
-		$result = Result::instance()->setData($data);
-		return $response->withContent( (string)$result );
+
+
 	}
 
 
