@@ -1,8 +1,15 @@
 <?php
 namespace application\Http\Controller;
 
+
+use Co\Context;
+use Scar\Cache;
+use Scar\Db;
+use Scar\db\Query;
+use Scar\http\ContentType;
 use Scar\http\Request;
 use Scar\http\Response;
+use Scar\Result;
 
 /**
  * Created by PhpStorm.
@@ -16,8 +23,10 @@ class Index
 
 	}
 
+
+
 	/**
-	 * @api {get}/user/Index/login 名称
+	 * @api {get} / 名称
 	 * @apiGroup user
 	 * @apiName 您
 	 * @apiVersion 1.0.0
@@ -39,12 +48,10 @@ class Index
 	 * {"code":5001,"message":"接口异常"}
 	 *
 	 */
-	public function Index( Request $request, Response $response )
+	public function Index( Request $request,Response $response  )
 	{
-
-
+		return $response->withContent('SCAR')->withContentType( ContentType::HTML);
 	}
-
 
 
 
