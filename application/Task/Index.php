@@ -9,10 +9,12 @@
 namespace application\Task;
 
 
+use Cake\Log\Log;
+
 class Index
 {
 	public function Index( $data )
 	{
-
+		\SeasLog::info( print_r($data,1) );
 	}
 }

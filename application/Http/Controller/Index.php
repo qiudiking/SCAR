@@ -4,6 +4,8 @@ namespace application\Http\Controller;
 
 use Co\Context;
 use Scar\Cache;
+use Scar\cache\CachePool;
+use Scar\Container;
 use Scar\Db;
 use Scar\db\Query;
 use Scar\http\ContentType;
@@ -50,6 +52,10 @@ class Index
 	 */
 	public function Index( Request $request,Response $response  )
 	{
+		$server =  Container::getInstance()->getWebServer();
+		$data['action'] = 'Index::Index';
+		$data['hello'] = '你好';
+		$server->task( serialize( $data ) );
 		return $response->withContent('SCAR')->withContentType( ContentType::HTML);
 	}
 
