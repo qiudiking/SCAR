@@ -19,7 +19,7 @@ use Scar\Result;
  * Date: 2019/7/17
  * Time: 17:13
  */
-class Index
+class Index extends Common
 {
 	public function __construct( Request $request, Response $response ) {
 
@@ -29,11 +29,11 @@ class Index
 
 	/**
 	 * @api {get} / 名称
-	 * @apiGroup user
+	 * @apiGroup 页面
 	 * @apiName 您
 	 * @apiVersion 1.0.0
 	 *
-	 * @apiDescription 接口描述
+	 * @apiDescription 官网首页
 	 *
 	 *
 	 *
@@ -52,7 +52,7 @@ class Index
 	 */
 	public function Index( Request $request,Response $response  )
 	{
-		return $response->withContent('SCAR')->withContentType( ContentType::HTML);
+		return $response->withContent($this->display('index/index'))->withContentType( ContentType::HTML);
 	}
 
 
