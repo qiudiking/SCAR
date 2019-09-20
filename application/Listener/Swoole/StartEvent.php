@@ -23,6 +23,9 @@ use Swoole\Coroutine;
  * 'workerExit',仅在开启reload_async特性后有效。异步重启特性，会先创建新的Worker进程处理新请求，旧的Worker进程自行退出。
  * 'managerStart',当管理进程启动时调用它
  * 'managerStop',当管理进程结束时调用它，
+ * 'handShake',WebSocket建立连接后进行握手
+ * 'open',当WebSocket客户端与服务器建立连接并完成握手后会回调此函数
+ * 'message',当服务器收到来自客户端的数据帧时会回调此函数
  * Class StartEvent
  *
  * @package application\Listener\Swoole
@@ -31,6 +34,8 @@ class StartEvent
 {
 	public function handle( \swoole_server $server )
 	{
+		Coroutine::create(function (){
 
+		});
 	}
 }

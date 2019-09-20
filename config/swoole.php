@@ -19,5 +19,7 @@ $config['http']['set']['log_file'] = APP_PATH.'/runtime/logs/swoole.log';
 $config['http']['set']['task_worker_num'] = 2;
 $config['http']['set']['max_request'] = 1000;
 $config['http']['set']['reload_async'] = true;
+$config['http']['set']['user'] = 'www';
+$config['http']['set']['group'] = 'www';
 
 return $config;
