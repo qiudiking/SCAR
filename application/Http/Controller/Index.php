@@ -21,6 +21,15 @@ use Scar\Result;
  */
 class Index extends Common
 {
+
+
+
+	/**
+	 * Index constructor.
+	 *
+	 * @param \Scar\http\Request  $request
+	 * @param \Scar\http\Response $response
+	 */
 	public function __construct( Request $request, Response $response ) {
 
 	}
@@ -28,26 +37,14 @@ class Index extends Common
 
 
 	/**
-	 * @api {get} / 名称
+	 * @api {get} / 首页
 	 * @apiGroup 页面
-	 * @apiName 您
+	 * @apiName home
 	 * @apiVersion 1.0.0
 	 *
 	 * @apiDescription 官网首页
 	 *
-	 *
-	 *
-	 * @apiSuccess {Number} code    状态码，0：请求成功
-	 * @apiSuccess {String} message   提示信息
-	 * @apiSuccess {Object} data    返回数据
-	 *
-	 * @apiSuccessExample {json} Success-Response:
-	 * {"code":0,"message":"","data":[]}
-	 *
-	 * @apiError 4002 The <code>id</code> of the User was not found.
-	 *
-	 * @apiErrorExample {json} Error-Response:
-	 * {"code":5001,"message":"接口异常"}
+	 * @apiUse Response
 	 *
 	 */
 	public function Index( Request $request,Response $response  )
@@ -56,5 +53,21 @@ class Index extends Common
 	}
 
 
+	/**
+	 * @api {get} /home 名称
+	 * @apiGroup 页面
+	 * @apiName home
+	 * @apiVersion 1.0.0
+	 *
+	 * @apiDescription 测试使用
+	 *
+	 * @apiUse Response
+	 *
+	 */
+	public function home(Request $request,Response $response)
+	{
+		$result = Result::instance();
+		return $response->withContent( (string)$result );
+	}
 
 }
