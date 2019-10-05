@@ -13,8 +13,7 @@
     "require": {
         "php": ">=7.1",
         "scar/coroutine":"*",
-        "robmorgan/phinx" :"0.10.6",
-        "twig/twig" : "2.11.3"
+        "robmorgan/phinx" :"0.10.6"
     },
     "autoload": {
         "psr-4": {
