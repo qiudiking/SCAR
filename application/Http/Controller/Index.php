@@ -2,13 +2,8 @@
 namespace application\Http\Controller;
 
 
-use Co\Context;
-use Scar\Cache;
-use Scar\cache\CachePool;
-use Scar\Container;
+
 use Scar\Db;
-use Scar\db\Query;
-use Scar\http\ContentType;
 use Scar\http\Request;
 use Scar\http\Response;
 use Scar\Result;
@@ -19,7 +14,7 @@ use Scar\Result;
  * Date: 2019/7/17
  * Time: 17:13
  */
-class Index extends Common
+class Index
 {
 
 
@@ -49,7 +44,10 @@ class Index extends Common
 	 */
 	public function Index( Request $request,Response $response  )
 	{
-		return $response->withContent($this->display('index/index'))->withContentType( ContentType::HTML);
+		$page = $request->get('page',1);
+		$list = Db::table('requirement')->order('create_time desc')->paginate(20,false,['page'=>$page]);
+		$list = $list->toArray();
+		\SeasLog::info( print_r($list,1) );
 	}
 
 
